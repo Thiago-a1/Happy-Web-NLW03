@@ -4,7 +4,7 @@ import { Map, Marker, TileLayer } from 'react-leaflet';
 import { LeafletMouseEvent } from 'leaflet';
 import { FiPlus } from "react-icons/fi";
 
-import Sidebar from "../componets/Sidebar";
+import Sidebar from "../components/Sidebar";
 import mapIcon from "../utils/mapIcon";
 
 import '../styles/pages/create-orphanage.css';
