@@ -46,6 +46,10 @@ form.create-orphanage-form fieldset legend {
   padding-bottom: 24px;
 }
 
+form.create-orphanage-form .map {
+  margin-bottom: 24px;
+}
+
 form.create-orphanage-form .input-block + .input-block {
   margin-top: 24px;
 }

@@ -1,0 +1,77 @@
+#page-confirmation {
+  width: 100vw;
+  height: 100vh;
+  padding: 0 40px;
+
+  background-color: #37C77F;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#page-confirmation .content-wraper {
+  position: relative;
+
+  width: 100%;
+  max-width: 920px;
+
+  height: 100%;
+  max-height: 500px;
+
+  background: url('../../images//confirmation.svg') no-repeat 90% center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+#page-confirmation .content-wraper main {
+  color: #FFF;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#page-confirmation .content-wraper main h1 {
+  max-width: 250px;
+  font-size: 80px;
+  font-weight: 800;
+  line-height: 80px;
+}
+
+#page-confirmation .content-wraper main p {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 34px;
+
+  text-align: center;
+
+  margin: 32px 0 60px 0;
+}
+
+#page-confirmation .content-wraper main .back-to-map-button {
+  width: 250px;
+  height: 64px;
+
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 25px;
+
+  background-color: #31B272;
+  color: #FFF;
+  border-radius: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: 0.4s;
+}
+
+#page-confirmation .content-wraper main .back-to-map-button:hover {
+  background-color: #3BD689;
+}
+

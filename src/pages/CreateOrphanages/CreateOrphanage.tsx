@@ -77,11 +77,9 @@ export default function CreateOrphanage() {
       data.append('images', image);
     })
 
-    await api.post('orphanages', data);
+    // await api.post('orphanages', data);
 
-    alert('Cadastro realizado');
-
-    history.push('/app')
+    history.push('/confirmation');
   }
 
   return (
@@ -98,6 +96,7 @@ export default function CreateOrphanage() {
               style={{ width: '100%', height: 280 }}
               zoom={11}
               onclick={handleMapClick}
+              className="map"
             >
               <TileLayer 
                 url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -118,6 +117,7 @@ export default function CreateOrphanage() {
               <input 
                 id="name" 
                 value={name} 
+                required
                 onChange={event => setName(event.target.value)} />
             </div>
 
@@ -127,6 +127,7 @@ export default function CreateOrphanage() {
                 id="name" 
                 maxLength={300} 
                 value={about}
+                required
                 onChange={event => setAbout(event.target.value)}/>
             </div>
 
@@ -154,6 +155,7 @@ export default function CreateOrphanage() {
                 type="file" 
                 id="image[]"
                 multiple 
+                required
                 onChange={handleSelectImage}
                 />
             </div>
@@ -167,19 +169,21 @@ export default function CreateOrphanage() {
               <textarea 
                 id="instructions" 
                 value={instructions}
+                required
                 onChange={event => setIntructions(event.target.value)}/>
             </div>
 
             <div className="input-block">
-              <label htmlFor="opening_hours">Nome</label>
+              <label htmlFor="opening_hours">Horário das visitas</label>
               <input 
                 id="opening_hours"
                 value={opening_hours}
+                required
                 onChange={event => setOpeningHours(event.target.value)} />
             </div>
 
             <div className="input-block">
-              <label htmlFor="open_on_weekends">Atende fim de semana</label>
+              <label htmlFor="open_on_weekends">Atende fim de semana ?</label>
 
               <div className="button-select">
                 <button 
