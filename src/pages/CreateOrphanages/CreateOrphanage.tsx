@@ -10,16 +10,6 @@ import mapIcon from "../../utils/mapIcon";
 import './create-orphanage.css';
 import api from "../../services/api";
 
-interface Orphanage {
-  name: string,
-  latitude: number,
-  longitude: number,
-  description: string,
-  instructions: string,
-  opening_hours: string,
-  open_on_weekends: string
-};
-
 export default function CreateOrphanage() {
   const history = useHistory();
 
@@ -57,6 +47,22 @@ export default function CreateOrphanage() {
     });
 
     setPreviewImages(selectedImagesPreview);
+  }
+
+  function handleDeleteImageToPreview(image: string, position: number) {
+    if (!images) {
+      return;
+    }
+
+    const imageDelete = images.splice(images.indexOf(images[position]), 1);
+
+    setImages(imageDelete);
+
+    const imageDeletePreview = previewImages.filter(imagePreview => imagePreview !== image);
+
+    console.log(images);
+
+    setPreviewImages(imageDeletePreview);
   }
 
   async function handleSubmit(event: FormEvent) {
@@ -135,10 +141,16 @@ export default function CreateOrphanage() {
               <label htmlFor="images">Fotos</label>
 
               <div className="images-container">
-                {previewImages.map(image => {
+                {previewImages.map((image, index) => {
                   return (
-                    <div className="image-container">
-                       <button className="close-container">
+                    <div 
+                      className="image-container"
+                      key={image}
+                      >
+                       <button 
+                        className="close-container" 
+                        type="button"
+                        onClick={() => handleDeleteImageToPreview(image, index)}>
                          <FiX size={24} color="#FF518F"/>
                        </button>
                       <img key={image} src={image} alt={name}/>
